@@ -56,6 +56,10 @@ $right_menu = [
         'align' => 'right',
         'can' => 'admins',
     ],
+
+    [
+        'key' => 'senhaunica-socialite',
+    ],
 ];
 
 # dashboard_url renomeado para app_url
