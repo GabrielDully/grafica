@@ -120,7 +120,7 @@
         <div class="row form-group">
             <div class="col-sm">
                 <label for="centro_de_despesa" class="required"><b>Centro de Despesa:</b></label>
-                <select class="form-control" name="centro_de_despesa">
+                <select class="form-control select2" name="centro_de_despesa">
                     <option value="" selected="">- Selecione -</option>
                     @foreach ($financeiro->listarCentrosDespesas() as $option)
                         {{-- 1. Situação em que não houve tentativa de submissão e é uma edição --}}
@@ -139,7 +139,7 @@
             </div>
             <div class="col-sm">
                 <label for="responsavel_centro_despesa"><b>Responsável pelo Centro de Despesa:</b></label>
-                <select class="form-control" name="responsavel_centro_despesa" @if($pedido->status == 'Aprovado')readonly @endif>
+                <select class="form-control select2" name="responsavel_centro_despesa" @if($pedido->status == 'Aprovado')readonly @endif>
                     <option value="" selected="">- Selecione -</option>
                     @foreach ($utils->listarDocentesServidores() as $option)
                         {{-- 1. Situação em que não houve tentativa de submissão e é uma edição --}}
