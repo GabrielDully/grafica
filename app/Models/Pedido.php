@@ -104,7 +104,7 @@ class Pedido extends Model
     //Função para modificar a mensagem padrão dos emails
     public static function configMail($pedido, $usuario, $tipo){
         $settings = new GeneralSettings;
-        $url = "<a href='http://grafica.fflch.usp.br/pedidos/{$pedido->id}'>Link do pedido</a>'";
+        $url = "<a href='" . config('grafica.app_url') . "/pedidos/{$pedido->id}'>Link do pedido</a>'";
         if($tipo == 'em_analise'){
             $mensagem = $settings->em_analise;
         }

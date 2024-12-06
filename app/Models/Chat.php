@@ -29,7 +29,7 @@ class Chat extends Model
     //Função para modificar a mensagem padrão do chat
     public static function configChatMail($pedido, $usuario, $chat){
         $settings = new GeneralSettings;
-        $url = "<a href='http://grafica.fflch.usp.br/pedidos/{$pedido->id}'>Link do pedido</a>'";
+        $url = "<a href='" . config('grafica.app_url') . "/pedidos/{$pedido->id}'>Link do pedido</a>'";
         $mensagem = $settings->chat;
         //Busca a última configuração
         $mensagem = str_replace(
