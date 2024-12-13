@@ -3,7 +3,7 @@
 @section('content')
 
 @if(Auth::guest())
-  Sistema para solicitação de serviços da Editora e Gráfica - FFLCH
+  Sistema para solicitação de serviços da Editora e Gráfica
 
   <br><br>
 
