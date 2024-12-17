@@ -10,7 +10,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-sm">
-          <a href="{{ $app_url }}/login/usp" class="btn btn-success"> 
+          <a href="{{ $app_url }}/login" class="btn btn-success"> 
             <i class="fa fa-university" aria-hidden="true"></i>
             Login USP 
           </a>
