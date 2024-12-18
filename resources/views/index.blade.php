@@ -17,19 +17,17 @@
         </div>
 
         <div class="col-sm">
-          <form method="GET" action="{{ $app_url }}/login/empresa">
-            @csrf
-            
-            <button type="submit" class="btn btn-success" name="login_action" value="email">
-              <i class="fa fa-building" aria-hidden="true"></i>  Editora / Gráfica - Primeiro Acesso
-            </button>
+            <!-- Link para a página de registro -->
+            <a href="{{ route('register') }}" class="btn btn-success">
+                <i class="fa fa-building" aria-hidden="true"></i> Editora / Gráfica - Primeiro Acesso
+            </a>
 
-            <button type="submit" class="btn btn-success" name="login_action" value="senha">
-              <i class="fa fa-building" aria-hidden="true"></i>  Login com Senha
-            </button>
-          </form>
-
+            <!-- Link para a página de login -->
+            <a href="{{ route('loginempresa') }}" class="btn btn-success">
+                <i class="fa fa-building" aria-hidden="true"></i> Login com Senha
+            </a>
         </div>
+
       </div>
 
       <hr>
