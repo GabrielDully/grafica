@@ -59,3 +59,9 @@ Route::post('/register', [RegisterController::class, 'handle'])->name('register'
 Route::get('/loginempresa', [LoginControllerEmpresa::class, 'show'])->name('loginempresa');
 Route::post('/loginempresa', [LoginControllerEmpresa::class, 'handle'])->name('loginempresa');
 
+Route::get('/protocol', function () {
+    return response()->json([
+        'protocolo' => request()->getScheme(), // Retorna 'http' ou 'https'
+        'cabecalhos' => request()->headers->all(), // Exibe todos os cabeçalhos recebidos
+    ]);
+});

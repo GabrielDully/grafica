@@ -20,37 +20,78 @@
             <!-- CNPJ -->
             <div class="row">
                 <div class="col-sm form-group">
-                    <label class="col-sm required" for="cnpj">CNPJ: </label>
-                    <input type="text" class="form-control cnpj" id="cnpj" name="cnpj" value="{{ old('cnpj') }}">
+                    <label for="cnpj" class="required">CNPJ:</label>
+                    <input 
+                        type="text" 
+                        class="form-control cnpj {{ $errors->has('cnpj') ? 'is-invalid' : '' }}" 
+                        id="cnpj" 
+                        name="cnpj" 
+                        value="{{ old('cnpj') }}" 
+                        required>
+                    @if($errors->has('cnpj'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('cnpj') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
             <!-- Email -->
             <div class="row">
                 <div class="col-sm form-group">
-                    <label class="col-sm required" for="email">Email do Representante da Empresa: </label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                    <label for="email" class="required">Email do Representante da Empresa:</label>
+                    <input 
+                        type="email" 
+                        class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" 
+                        id="email" 
+                        name="email" 
+                        value="{{ old('email') }}" 
+                        required>
+                    @if($errors->has('email'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('email') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
             <!-- Password -->
             <div class="row">
                 <div class="col-sm form-group">
-                    <label class="col-sm required" for="password">Senha: </label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="password" class="required">Senha:</label>
+                    <input 
+                        type="password" 
+                        class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" 
+                        id="password" 
+                        name="password" 
+                        required>
+                    @if($errors->has('password'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('password') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
             <!-- Confirm Password -->
             <div class="row">
                 <div class="col-sm form-group">
-                    <label class="col-sm required" for="password_confirmation">Confirmar Senha: </label>
-                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                    <label for="password_confirmation" class="required">Confirmar Senha:</label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password_confirmation" 
+                        name="password_confirmation" 
+                        required>
                 </div>
             </div>
 
             <!-- Esqueci a Senha (link) -->
-            <a href="{{ route('loginempresa') }}">Esqueci a Senha</a>
+            <div class="row">
+                <div class="col-sm text-end">
+                    <a href="{{ route('loginempresa') }}">Esqueci a Senha</a>
+                </div>
+            </div>
 
         </div> <!-- Fim do card-body -->
 
@@ -65,4 +106,4 @@
     @include('dashboard')
 @endif
 
-@endsection('content')
+@endsection
