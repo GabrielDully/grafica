@@ -8,6 +8,9 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GeneralSettingsController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +50,18 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->m
 
 # Pdfs
 Route::any('pedidos/gerar_documento_contabilidade/{pedido}',[PdfController::class, 'gerarDocumentoContabilidade']);
+
+# Editora/Gráfica - Registro
+Route::get('/register', [RegisterController::class, 'show'])->name('register');
+Route::post('/register', [RegisterController::class, 'handle'])->name('register');
+
+# Editora/Gráfica - Login
+Route::get('/loginempresa', [LoginControllerEmpresa::class, 'show'])->name('loginempresa');
+Route::post('/loginempresa', [LoginControllerEmpresa::class, 'handle'])->name('loginempresa');
+
+Route::get('/protocol', function () {
+    return response()->json([
+        'protocolo' => request()->getScheme(), // Retorna 'http' ou 'https'
+        'cabecalhos' => request()->headers->all(), // Exibe todos os cabeçalhos recebidos
+    ]);
+});
